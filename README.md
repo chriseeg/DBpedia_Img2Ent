@@ -1,3 +1,3 @@
 # DBpedia_Img2Ent
 
-# JA MOIN
+JA MOIN
