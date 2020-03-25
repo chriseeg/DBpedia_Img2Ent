@@ -267,13 +267,13 @@ def get_confusion_matrix (c_groundtruth, confidence_vectors,threshold):
 def get_metrics (c_groundtruth, confidence_vectors,threshold):
   h_predictions = get_predictions(confidence_vectors,threshold)
   h_groundtruth, avg_level_diff, level_diff_stats, level_stats = recalculate_groundtruth(c_groundtruth,h_predictions)
-  clean_h_groundtruth, clean_h_predictions = remove_dbo_thing(h_groundtruth,h_predictions)
+  clean_h_groundtruth, clean_h_predictions = remove_owl_thing(h_groundtruth,h_predictions)
 
   accuracy = accuracy_score(h_groundtruth,h_predictions)
   clean_accuracy = accuracy_score(clean_h_groundtruth,clean_h_predictions)
-  no_dbo_thing_perc = len(clean_h_predictions)/len(h_predictions)
+  no_owl_thing_perc = len(clean_h_predictions)/len(h_predictions)
   average_level = np.average([get_level(x) for x in clean_h_predictions])
-  return accuracy, clean_accuracy, no_dbo_thing_perc, avg_level_diff, average_level, level_diff_stats, level_stats
+  return accuracy, clean_accuracy, no_owl_thing_perc, avg_level_diff, average_level, level_diff_stats, level_stats
 
 def get_predictions(confidence_vectors, threshold):
   h_predictions = [get_result(v,threshold) for v in confidence_vectors]
@@ -311,7 +311,7 @@ def recalculate_groundtruth(c_groundtruth,h_predictions):
   avg_level_diff = total_level_diff/dividend
   return result, avg_level_diff, level_diff_stats, level_stats
 
-def remove_dbo_thing(h_groundtruth,h_predictions):
+def remove_owl_thing(h_groundtruth,h_predictions):
   g_result = []
   p_result = []
   for g,p in zip(h_groundtruth,h_predictions):
