@@ -16,6 +16,7 @@
 # Instructions
 ## Instructions for using EfficientNet.ipynb
 ### Purpose:
+The purpose of this notebook is to train and evaluate EfficientNet models for the task of predicting the rdf:type of DBpedia entities based on images. Furthermore it contains code to denoise the dataset as mentioned in the report. Evaluating a trained CNN with the hierarchy approach is possible too. The last part of the code can be used to predict the rdf:type of individual images with models loaded from checkpoints
 
 ### Instructions:
 #### Imports and Environment:
