@@ -14,6 +14,37 @@
 - Establish a mapping between the obtained ImageNet classes for these entities to DBpedia classes using ML algorithm
 
 # Instructions
+## Instructions for using get_random_entities.ipynb
+### Purpose:
+This notebook is the first part of the dataset creation. It is used to retrieve random entities for certain rdf:types. Later, images from Wikipedia will be scraped for these entities to create a training dataset.
+In the training process, the images will be the input for the algorithm and the rdf:type is the label. The rdf:types, on which base training examples are selected, are loaded in the first step.
+
+### Instructions:
+#### Load rdf:types and entities
+In these cells, the rdf:types with top entity counts are collected. From a central list, all types are imported. Via a *SPARQL* query the total number of entities is counted and stored into a table.
+
+#### Get X random resources for top 100 rdf types
+From all rdf:types, the top 100 ones with highest entity count are selected. To exclude less useful types, these types are filtered out:
+- less than 5% of the entities contain image on wiki page (this was measured in a following step)
+- general types like *Agent* or *Image* that do not contribute any classification granularity
+The functions *get_random_resources* and *get_more_random_resources* are used to collect a certain amount of random entity resources from DBpedia via *SPARQL*. They are stored in json formatting in a text file.
+
+## Instructions for using get_random_entities.ipynb
+### Purpose:
+This notebook creates a dataset that will later be used for training and testing. After the initialization, a resource file, created with *get_random_entities.ipynb* is loaded. Using parallel computing, images of Wikipedia pages are downloaded, processed and uploaded into a google storage bucket. 
+
+### Instructions:
+#### Threading Process
+To run multiple download processes at once, python threading is used. Each thread runs the function *get_imageurl_threading* , which is handed a rdf:type and its random resources. The function calls *get_one_imageurl*, which does the following:
+- Open a Wikipedia url via the resource
+- Find the first .jpg image on the page by parsing with *BeautifulSoup* (ignoring images >45 pixels in height)
+- Get a standard Wikimedia thumbnail url with *get_thumbnail_url*
+The image is downloaded temporarily, converted to RGB and uploaded to a google cloud bucket.
+When all threads are finished processing, a .csv table is created to document the image files locations inside the bucket.
+
+#### Ranking approach
+This approach is not applied in the paper but implemented in code. It is analogous to the previous approach but instead of getting the first Wikipedia image url, several images are compared. This is done via the tf-idf score.
+
 ## Instructions for using EfficientNet.ipynb
 ### Purpose:
 The purpose of this notebook is to train and evaluate EfficientNet models for the task of predicting the rdf:type of DBpedia entities based on images. Furthermore it contains code to denoise the dataset as mentioned in the report. Evaluating a trained CNN with the hierarchy approach is possible too. The last part of the code can be used to predict the rdf:type of individual images with models loaded from checkpoints
