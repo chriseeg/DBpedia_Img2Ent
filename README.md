@@ -1,6 +1,6 @@
-# DBpedia_Img2Ent
+# DBpedia_Img2Ent - Predicting DBpedia Entitity Types From Wikipedia Images
 
-*Information Service Engineering, Prof. Dr. Harald Sack & Dr. Mehwish Alam, FIZ Karlsruhe & AIFB, KIT Karlsruhe, WS 2018/19*
+*Information Service Engineering, Prof. Dr. Harald Sack & Dr. Mehwish Alam, FIZ Karlsruhe & AIFB, KIT Karlsruhe, WS 2019/20*
 
 ## Tasks
 ### Dataset Generation:
