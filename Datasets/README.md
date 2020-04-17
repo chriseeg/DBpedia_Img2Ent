@@ -4,7 +4,19 @@
 Random DBpedia resources for 100 rdf:types, scraped via SPARQL.
 - 10000 per rdf:type
 - 50000 per rdf:type (not all contain 50000 resources)
-
+```
+{
+  rdf_type_01:
+    [
+      resource_link_01,
+      resource_link_01,
+      ...
+    ],
+  rdf_type_02:
+    [...]
+  ...
+}
+```
 ## 01 Datests used in training
 The actual datasets used for training. The .zip files in this folder do not contain images, but are link collections to links in a Google Cloud Storage bucket.
 ```
