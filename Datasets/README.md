@@ -15,7 +15,7 @@ Random DBpedia resources for 100 rdf:types, scraped via SPARQL.
   ...
 }
 ```
-## 01 Datests used in training
+## 01 Datests - used in training
 The actual datasets used for training. The .zip files in this folder do not contain images, but are link collections to links in a Google Cloud Storage bucket.
 ```
 input:	image-link
