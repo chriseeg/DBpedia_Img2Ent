@@ -1,6 +1,6 @@
 # Datasets - used in Training
 
-The chart below points to the training datasets in the GCS bucket. Further statistics can be found in *01 Datasets - used in training/Dataset Stats.xlsx*
+The chart below points to training datasets containing actual image files in the GCS bucket. Further statistics can be found in *Dataset Stats.xlsx*
 
 |Name|Number of Training Images|Number of Evaluation Images|Number of Classes|GS Link|HTTPS Link|
 |----|----|----|----|----|----|
