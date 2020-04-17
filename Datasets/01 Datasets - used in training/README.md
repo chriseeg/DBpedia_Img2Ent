@@ -1,9 +1,9 @@
 # Datasets
 
-The .zip files in this folder do not contain images, but are link collections to links in a google cloud storage.
+The .zip files in this folder do not contain images, but are link collections to links in a Google Cloud Storage bucket.
 For links to the images on Wikipedia look into https://github.com/chriseeg/DBpedia_Img2Ent/tree/master/Datasets/02%20Datasets%20-%20Wikipedia%20links
 
-Further statistics are in *Dataset Stats.xlsx*
+The chart below points to datasets in the GCS bucket. Further statistics can be found in *Dataset Stats.xlsx*
 
 |Name|Number of Training Images|Number of Evaluation Images|Number of Classes|GS Link|HTTPS Link|
 |----|----|----|----|----|----|
