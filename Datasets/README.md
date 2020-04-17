@@ -4,7 +4,7 @@
 Random DBpedia resources for 100 rdf:types, scraped via SPARQL.
 - 10000 per rdf:type
 - 50000 per rdf:type (not all contain 50000 resources)
-```
+```json
 {
   rdf_type_01:
     [
