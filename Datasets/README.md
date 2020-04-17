@@ -7,11 +7,9 @@ Random DBpedia resources for 100 rdf:types, scraped via SPARQL.
 ```python
 {
   rdf_type_01:
-    [
-      resource_link_01,
-      resource_link_01,
-      ...
-    ],
+    [resource_link_01,
+    resource_link_02,
+    ...],
   rdf_type_02:
     [...]
   ...
