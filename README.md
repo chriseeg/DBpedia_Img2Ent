@@ -14,7 +14,7 @@
 - Establish a mapping between the obtained ImageNet classes for these entities to DBpedia classes using ML algorithm
 
 # Instructions
-## Instructions for using get_random_entities.ipynb
+## Instructions for using Code/get_random_entities.ipynb
 ### Purpose:
 This notebook is the first part of the dataset creation. It is used to retrieve random entities for certain rdf:types. Later, images from Wikipedia will be scraped for these entities to create a training dataset.
 In the training process, the images will be the input for the algorithm and the rdf:type is the label. The rdf:types, on which base training examples are selected, are loaded in the first step.
@@ -29,7 +29,7 @@ From all rdf:types, the top 100 ones with highest entity count are selected. To 
 - general types like *Agent* or *Image* that do not contribute any classification granularity
 The functions *get_random_resources* and *get_more_random_resources* are used to collect a certain amount of random entity resources from DBpedia via *SPARQL*. They are stored in json formatting in a text file.
 
-## Instructions for using get_random_entities.ipynb
+## Instructions for using Code/get_wiki_images.ipynb
 ### Purpose:
 This notebook creates a dataset that will later be used for training and testing. After the initialization, a resource file, created with *get_random_entities.ipynb* is loaded. Using parallel computing, images of Wikipedia pages are downloaded, processed and uploaded into a google storage bucket. 
 
